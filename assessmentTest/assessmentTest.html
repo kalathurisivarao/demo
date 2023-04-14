@@ -1,0 +1,23 @@
+<template>
+     
+    <div class="my-combobox">
+         <lightning-combobox label=     "Page Size" value={pageLimit} options={pageOptions} onchange={handleChange}  ></lightning-combobox>
+    </div>
+
+    <div class="para-text">
+         <p>Viewing {pageLimit} records per Page</p>
+    </div>
+    <div class="button-group">
+         <lightning-button label="First" onclick={handleFirst}  variant = "brand"></lightning-button> 
+         &nbsp;   
+         <lightning-button label="Previous" onclick={handlePrevious} variant = "brand"></lightning-button>
+         &nbsp;  
+         <lightning-button label="Next" onclick={handleNext} variant = "brand"></lightning-button>
+         &nbsp;  
+         <lightning-button label="Last" onclick={handleLast} variant = "brand"></lightning-button>
+    </div>
+         
+    <div class="result-table">
+        <lightning-datatable key-field="Id" data={result} columns={columns} hide-checkbox-column="true"></lightning-datatable>
+    </div>
+</template>
